@@ -1,0 +1,32 @@
+@media (min-width: 700px) and (max-width: 958px) {
+	.responsive-layout {
+		&.boxed {
+			.page-wrapper {
+				&, .ajax-result {
+					> div,
+					> article {
+						padding-left: @horizontal-padding-large*2;
+						padding-right: @horizontal-padding-large*2;
+					}
+				}
+			}
+
+			.row > div.grid-1-1 {
+				&.extended,
+				&.extended-content {
+					padding-left: @horizontal-padding-large*2 !important;
+					padding-right: @horizontal-padding-large*2 !important;
+					margin-left: -@horizontal-padding-large*2 + @horizontal-padding/2;
+					margin-right: -@horizontal-padding-large*2 + @horizontal-padding/2;
+				}
+			}
+
+			aside.left,
+			aside.right,
+			#footer-sidebars .widget,
+			.header-middle .header-middle-content {
+				padding: 0 @horizontal-padding-large*2 !important;
+			}
+		}
+	}
+}

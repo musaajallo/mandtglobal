@@ -1,0 +1,127 @@
+# Copyright (C) 2015 Vamtam
+# This file is distributed under the same license as the Vamtam Portfolio Core package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Vamtam Portfolio Core 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/vamtam-portfolio\n"
+"POT-Creation-Date: 2015-04-08 21:16:56+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: vamtam-portfolio.php:43
+msgid "Add New Portfolio"
+msgstr ""
+
+#: vamtam-portfolio.php:44
+msgid "Edit Portfolio"
+msgstr ""
+
+#: vamtam-portfolio.php:45
+msgid "New Portfolio"
+msgstr ""
+
+#: vamtam-portfolio.php:46
+msgid "View Portfolio"
+msgstr ""
+
+#: vamtam-portfolio.php:47
+msgid "Search Portfolios"
+msgstr ""
+
+#: vamtam-portfolio.php:48
+msgid "No portfolios found"
+msgstr ""
+
+#: vamtam-portfolio.php:49
+msgid "No portfolios found in Trash"
+msgstr ""
+
+#: vamtam-portfolio.php:52
+msgid "portfolio"
+msgstr ""
+
+#: vamtam-portfolio.php:81
+msgid "Search Portfolio Categories"
+msgstr ""
+
+#: vamtam-portfolio.php:82
+msgid "Popular Portfolio Categories"
+msgstr ""
+
+#: vamtam-portfolio.php:83
+msgid "All Portfolio Categories"
+msgstr ""
+
+#: vamtam-portfolio.php:86
+msgid "Edit Portfolio Category"
+msgstr ""
+
+#: vamtam-portfolio.php:87
+msgid "Update Portfolio Category"
+msgstr ""
+
+#: vamtam-portfolio.php:88
+msgid "Add New Portfolio Category"
+msgstr ""
+
+#: vamtam-portfolio.php:89
+msgid "New Portfolio Category Name"
+msgstr ""
+
+#: vamtam-portfolio.php:90
+msgid "Separate Portfolio category with commas"
+msgstr ""
+
+#: vamtam-portfolio.php:91
+msgid "Add or remove portfolio category"
+msgstr ""
+
+#: vamtam-portfolio.php:92
+msgid "Choose from the most used portfolio category"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Vamtam Portfolio Core"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Registers the portfolio post type used in Vamtam themes"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vamtam"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://vamtam.com"
+msgstr ""
+
+#: vamtam-portfolio.php:40
+msgctxt "post type general name"
+msgid "Portfolios"
+msgstr ""
+
+#: vamtam-portfolio.php:41
+msgctxt "post type singular name"
+msgid "Portfolio"
+msgstr ""
+
+#: vamtam-portfolio.php:42
+msgctxt "portfolio"
+msgid "Add New"
+msgstr ""
+
+#: vamtam-portfolio.php:79
+msgctxt "taxonomy general name"
+msgid "Portfolio Categories"
+msgstr ""
+
+#: vamtam-portfolio.php:80
+msgctxt "taxonomy singular name"
+msgid "Portfolio Category"
+msgstr ""

@@ -1,0 +1,115 @@
+// dynamically generated file containing all theme options
+@import "../../../cache/variables";
+
+// some mixins
+@import "lib/prefixer";
+
+@import "variable-aliases";
+
+// splash screen - must be near the top
+@import "splash-screen";
+
+// reset, grid, typography and some minor adjustments for plugins
+@import "base";
+@import "grid";
+@import "cube";
+@import "general-typography";
+@import "socialcount";
+@import "animations";
+@import "buttons";
+@import "comments";
+@import "bbpress";
+@import "timetable";
+
+// header, sub-header and menus
+@import "header";
+@import "page-title";
+@import "menus";
+@import "top-menu";
+
+// main content
+@import "main";
+
+// Magnific Popup theme
+@import "magnific-theme";
+
+// lists, forms, pagination
+@import "lists";
+@import "form-inputs";
+@import "pagination";
+
+// all shortcodes which come with the theme
+@import "shortcodes/accordion";
+@import "shortcodes/blockquote";
+@import "shortcodes/blog/large.less";
+@import "shortcodes/blog/small.less";
+@import "shortcodes/column";
+@import "shortcodes/countdown";
+@import "shortcodes/dividers";
+@import "shortcodes/dropcaps";
+@import "shortcodes/expandable-services";
+@import "shortcodes/highlight";
+@import "shortcodes/icon";
+@import "shortcodes/image";
+@import "shortcodes/linkarea";
+@import "shortcodes/portfolios";
+@import "shortcodes/pricing";
+@import "shortcodes/progress";
+@import "shortcodes/services";
+@import "shortcodes/sitemap";
+@import "shortcodes/slogan";
+@import "shortcodes/table";
+@import "shortcodes/tabs";
+@import "shortcodes/team_member";
+@import "shortcodes/twitter";
+@import "shortcodes/tooltip";
+@import "shortcodes/wpcf7";
+@import "shortcodes/wysija";
+
+// generic widget styles
+@import "widgets/general";
+
+// styles for the widgets which come with the theme, as well as those from WP Core
+@import "widgets/authors";
+@import "widgets/calendar";
+@import "widgets/contact_info";
+@import "widgets/flickr";
+@import "widgets/icon_and_link";
+@import "widgets/multi";
+@import "widgets/nav_menu";
+@import "widgets/post_formats";
+@import "widgets/search";
+@import "widgets/social";
+@import "widgets/tagcloud";
+@import "widgets/widget_rss";
+
+// error 404 page
+@import "page-404";
+
+// footer styles
+@import "footer";
+
+// feedback and scroll to top buttons
+@import "side-buttons";
+
+// all WooCommerce styles
+@import "woocommerce/wc-general.less";
+@import "woocommerce/wc-widgets.less";
+
+// this file must be after all shortcodes, widgets and plugin integrations, but before the responsive code
+@import "closing";
+
+// styles required by WP Core
+@import "wp.less";
+
+// styles which are dependent on the viewport size
+@import "responsive/layout-max";
+@import "responsive/layout-max-high";
+@import "responsive/layout-max-low";
+@import "responsive/layout-below-max";
+@import "responsive/layout-medium";
+@import "responsive/layout-small";
+@import "responsive/mobile-header";
+
+// print styles
+@import "print";

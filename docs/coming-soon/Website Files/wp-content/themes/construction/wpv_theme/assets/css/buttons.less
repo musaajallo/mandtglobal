@@ -1,0 +1,348 @@
+// common styles for dynamically generated buttons (to be used with .button-gen())
+.button-gen-common() {
+	font-size: 1em;
+	font-weight: normal;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	vertical-align: middle;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	text-decoration: none;
+	text-shadow: none;
+	line-height: 1.15em;
+	font-weight: normal;
+	text-shadow: none;
+	border-widht: 2px;
+	padding: 0;
+	text-align: center !important;
+
+	&, span {
+		transition: color .3s ease, border .3s ease, background .3s ease;
+	}
+
+	span {
+		display: inline-block;
+		font-size: 1em;
+		line-height: inherit;
+		padding: .3em .4em;
+		margin: 0 0;
+		vertical-align: baseline;
+
+		&.icon {
+			font-size: 100% ;
+			vertical-align: bottom !important;
+
+			&.shortcode.inverted-colors {
+				font-size: 100% ;
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 1px 1px rgba(255, 255, 255, 0.2);
+				text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+			}
+
+			&:first-child,
+			&:last-child {
+				vertical-align: top;
+				background: none;
+			}
+
+			&:first-child {
+				padding: .5em 0 .5em .8em !important;
+			}
+
+			&:last-child {
+				padding: .5em .8em .5em 0 !important;
+			}
+		}
+
+		&.btext {
+			position: relative;
+			font-weight: 500;
+			vertical-align: middle;
+			padding: 0.7em 1.2em;
+			letter-spacing: 1px;
+		}
+	}
+
+ 	&:hover {
+		&, span {
+			text-decoration: none;
+		}
+	}
+}
+
+.button-gen-common-sc() {
+	.button-gen-common();
+
+	&.button-border,
+	&.button-style-3 {
+		background: transparent;
+		box-shadow: none;
+		font-style: normal;
+		overflow: hidden;
+	}
+
+	&.button-border {
+		&:hover {
+			span.btext {
+				position: relative;
+				display: inline-block;
+				-webkit-transition: -webkit-transform 0.3s;
+				-moz-transition: -moz-transform 0.3s;
+				transition: transform 0.3s;
+				.transform( ~"translateY(-100%)" );
+
+				&:before {
+					position: absolute;
+					content:  attr(data-text);
+					font-weight: 700;
+					.translate3d(0,0,0);
+					top: 100%;
+					left: 0px;
+					height: 100%;
+					width: 100%;
+					padding-top: 0.8em;
+					line-height: 1.2em;
+				}
+			}
+		}
+
+		span {
+			&.btext {
+				padding: .8em 2em !important;
+				font-weight: 600 !important;
+				line-height: 1.2em;
+			}
+		}
+	}
+
+	&.button-style-3 {
+		span.icon {
+			padding: 0.7em 0.8em !important;
+			vertical-align: middle !important;
+
+			&:first-child {
+				border-right: solid 1px;
+			}
+		}
+	}
+}
+
+// mixins for generating button styles based on their background color
+
+.button-gen(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	background: @bgcolor;
+	.readable-color(@bgcolor, 70, 70%);
+
+	span {
+		.readable-color(@bgcolor, 70, 70%);
+	}
+}
+
+.button-gen(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen();
+}
+
+// mixins for generating button styles based on their background color
+
+.button-gen-sc(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	.button-gen(@bgcolor);
+
+	&.button-border {
+		border: 2px solid @bgcolor;
+
+		&:hover span,
+		span {
+			color: @bgcolor !important;
+		}
+	}
+
+	&.button-style-3 {
+		border: none;
+		background: @bgcolor;
+		padding: 0px !important;
+
+		span {
+			.readable-color( @bgcolor, 70, 70% );
+
+			&.icon {
+				padding: 0.5em 0.8em !important;
+
+				&:first-child {
+					border-right: solid 1px;
+					.readable-border( @bgcolor, 70, 70% );
+				}
+
+				&:last-child {
+					border-left: solid 1px;
+					.readable-border( @bgcolor, 70, 70% );
+				}
+			}
+		}
+	}
+}
+
+.button-gen-sc(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-sc();
+}
+
+/////////////////
+
+.button-gen-hover(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	&:hover,
+	&:focus,
+	&:active {
+		background: @bgcolor;
+
+		&, span {
+			.readable-color(@bgcolor) ;
+		}
+	}
+}
+
+.button-gen-hover(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-hover();
+}
+
+.button-gen-hover-sc(@bgcolor:#DDD) when (iscolor(@bgcolor)) {
+	.button-gen-hover(@bgcolor);
+
+	&.button-border,
+	&.button-style-3 {
+		&:after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 0;
+			bottom: 0;
+			left: 0;
+			background: @bgcolor;
+			transition: all 0.3s;
+		}
+
+		&:hover {
+			&:after {
+				height: 100%;
+			}
+
+			&, span {
+				border-color: @bgcolor;
+			}
+		}
+	}
+
+	&.button-style-3 {
+		&:hover {
+			span {
+				color: lighten(@bgcolor, 90%) ;
+
+				&.icon {
+					.readable-border( @bgcolor );
+
+					&:first-child {
+						color: lighten(@bgcolor, 90%) !important;
+					}
+
+					&:last-child {
+						color: lighten(@bgcolor, 90%) !important;
+					}
+				}
+			}
+		}
+	}
+
+	&.button-border {
+		&:hover,
+		&:focus {
+			background: none;
+
+			span {
+				color: @bgcolor;
+
+				&.btext {
+					&:before {
+						color: lighten(@bgcolor, 90%);
+						background: @bgcolor;
+					}
+				}
+
+				&.icon {
+					color: lighten(@bgcolor, 90%) !important;
+				}
+			}
+		}
+	}
+}
+
+.button-gen-hover-sc(@bgcolor:#DDD) when not (iscolor(@bgcolor)) {
+	.button-gen-hover-sc();
+}
+
+/*
+ *  common style for submit buttons
+ */
+.submit-button-style {
+	.button-gen-common();
+	.button-gen(@accent-color-1);
+	.button-gen-hover(@accent-color-3);
+	padding: 0.8em 1.6em;
+
+}
+
+// actual buttons below
+
+.button,
+.vamtam-button,
+input[type=button],
+input[type=submit] {
+	.submit-button-style;
+	padding: 0;
+}
+
+.button,
+.vamtam-button {
+	&,
+	&.accent1,
+	&.accent2,
+	&.accent3,
+	&.accent4,
+	&.accent5,
+	&.accent6,
+	&.accent7,
+	&.accent8 {
+		.button-gen-common-sc();
+	}
+
+	&.accent1 {.button-gen-sc(@accent-color-1); }
+	&, &.accent2 { .button-gen-sc(@accent-color-2); }
+	&.accent3 { .button-gen-sc(@accent-color-3); }
+	&.accent4 { .button-gen-sc(@accent-color-4); }
+	&.accent5 { .button-gen-sc(@accent-color-5); }
+	&.accent6 { .button-gen-sc(@accent-color-6); }
+	&.accent7 { .button-gen-sc(@accent-color-7); }
+	&.accent8 { .button-gen-sc(@accent-color-8); }
+
+	&, &.hover-accent1 {.button-gen-hover-sc(@accent-color-1); }
+	&.hover-accent2 { .button-gen-hover-sc(@accent-color-2); }
+	&.hover-accent3 { .button-gen-hover-sc(@accent-color-3); }
+	&.hover-accent4 { .button-gen-hover-sc(@accent-color-4); }
+	&.hover-accent5 { .button-gen-hover-sc(@accent-color-5); }
+	&.hover-accent6 { .button-gen-hover-sc(@accent-color-6); }
+	&.hover-accent7 { .button-gen-hover-sc(@accent-color-7); }
+	&.hover-accent8 { .button-gen-hover-sc(@accent-color-8); }
+}
+
+.button,
+a.button,
+.vamtam-button {
+	.button-gen-common();
+
+	&.full {
+		width: auto;
+		float: none;
+		display: block;
+	}
+}

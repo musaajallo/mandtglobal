@@ -1,0 +1,73 @@
+.mfp-vamtam {
+	button.mfp-close {
+		@border: 4px;
+		@size: 44px + @border*2;
+
+		color: @accent-color-8;
+		opacity: 1;
+		margin-right: -@size/2;
+		right: 50%;
+		margin-top: 60px;
+		position: fixed;
+
+		&:before {
+			content: '';
+			width: @size;
+			height: @size;
+			border: @border solid;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -@size/2;
+			margin-top: -@size/2;
+			border-radius: 50%;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+	}
+
+	&.mfp-bg {
+		background: @accent-color-3;
+	}
+
+	.mfp-arrow {
+		color: @accent-color-8;
+		width: 120px;
+		height: 60px;
+
+		&:before {
+			display: none;
+		}
+
+		&:after {
+			position: absolute;
+			font-family: theme;
+			font-size: 60px;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
+			text-align: center;
+			border: 0;
+			margin: -30px 0 0 -30px;
+			top: 50%;
+			left: 50%;
+		}
+
+		&:hover {
+			color: @accent-color-1;
+		}
+	}
+
+	.mfp-arrow-left {
+		&:after {
+			content: icon(theme-arrow-left22);
+		}
+	}
+
+	.mfp-arrow-right {
+		&:after {
+			content: icon(theme-arrow-right22);
+		}
+	}
+}
